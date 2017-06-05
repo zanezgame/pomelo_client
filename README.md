@@ -4,10 +4,11 @@ pomelo client for egret navtie
 1，pomelo client 前端库支持 egret 原生打包
 
 2，修复 收不到 pomelo.reqId ==128 收到 返回BUG
- 
+
 使用方法  typescript
  
-初始化 
+ 初始化pomelo
+ 
  private initSocket() {
 
         if (this.socket == null) {
@@ -68,7 +69,8 @@ public request(route: string, msg: any, cb: Function, thisArg?: any): void {
     }
     
     
-  请求服务 notify  
+
+请求服务 notify  
     public notify(route: string, msg: any): void {
         this.socket.notify(route, msg);
     }
