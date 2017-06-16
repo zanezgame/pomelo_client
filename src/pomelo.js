@@ -534,7 +534,7 @@ var Pomelo = (function (ByteArray) {
 
   /***** constants *****/
 
-  var constants = {};
+  var constants = Protobuf.constants = {};
 
   constants.TYPES = {
     uInt32: 0,
@@ -566,7 +566,7 @@ var Pomelo = (function (ByteArray) {
 
   /***** Codec *****/
 
-  var Codec = {};
+  var Codec = Protobuf.codec = {};
 
   var buffer = new ArrayBuffer(8);
   var float32Array = new Float32Array(buffer);
@@ -1490,8 +1490,8 @@ var Pomelo = (function (ByteArray) {
         server: protos.server || {},
         client: protos.client || {}
       };
-      if (!!this.protobuf) {
-        this.protobuf.init({ encoderProtos: protos.client, decoderProtos: protos.server });
+      if (!!Protobuf) {
+        Protobuf.init({ encoderProtos: protos.client, decoderProtos: protos.server });
       }
     }
   };
